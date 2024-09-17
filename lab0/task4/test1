@@ -1,7 +1,7 @@
 import time
 t_start = time.perf_counter()
 
-n = int(open('input.txt').readline())
+n = int(open('lab0/task4/input.txt').readline())
 f = True
 while f:
     if 0 <= n <= 45:
@@ -18,7 +18,7 @@ for i in range(int(n) - 1):
 if n <= 1:
     new = n
 
-with open('output.txt', 'w') as f:
+with open('lab0/task4/output.txt', 'w') as f:
     f.write(str(new))
 f.close()
 
