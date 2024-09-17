@@ -1,4 +1,4 @@
-with open('input.txt', 'r') as f:
+with open('lab0/task1/input.txt', 'r') as f:
     a, b = map(int, f.readline().split())
     flag = True
     while f:
@@ -10,7 +10,7 @@ with open('input.txt', 'r') as f:
 
 f.close()
 
-with open('output.txt', 'w') as f:
+with open('lab0/task1/output.txt', 'w') as f:
     f.write(str(a + b ** 2))
 
 f.close()
