@@ -22,7 +22,7 @@ def average_case():
 
 def worst_case():
     with open('input.txt', 'w') as file:
-        n = random.randint(1, 2 * 10 ** 4)
+        n = 2 * 10 ** 4
         file.write(str(n) + '\n')
         file.write(' '.join(map(str, sorted(random.sample(range(1000000), n))[::-1])))
 
@@ -35,7 +35,7 @@ def worst_case():
 
 def better_case():
     with open('input.txt', 'w') as file:
-        n = random.randint(1, 2 * 10 ** 4)
+        n = 1
         file.write(str(n) + '\n')
         file.write(' '.join(map(str, sorted(random.sample(range(1000000), n)))))
 
@@ -48,12 +48,12 @@ def better_case():
 
 # better_case()
 # print(time.perf_counter() - start, 'c', sep='')
-# print(tracemalloc.get_traced_memory()[0] / 1024, 'MB')
+# print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'MB')
 #
 # worst_case()
 # print(time.perf_counter() - start, 'c', sep='')
-# print(tracemalloc.get_traced_memory()[0] / 1024, 'MB')
+# print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'MB')
 #
 # average_case()
 # print(time.perf_counter() - start, 'c', sep='')
-# print(tracemalloc.get_traced_memory()[0] / 1024, 'MB')
+# print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'MB')
