@@ -17,5 +17,9 @@ def binary_search(mas, what_find):
     return -1
 
 
-for i in range(k):
-    print(binary_search(mass, mass_find[i]))
+def play(mas, maas_find):
+    return [binary_search(mas, maas_find[i]) for i in range(len(maas_find))]
+
+
+with open('output.txt', 'w') as f:
+    f.write(' '.join(map(str, play(mass, mass_find))))
