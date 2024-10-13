@@ -9,5 +9,4 @@ def find_max(a):
             end_indx = i
         if summ < 0:
             summ = 0
-    print(start_indx, end_indx)
     return a[start_indx:end_indx + 1]
