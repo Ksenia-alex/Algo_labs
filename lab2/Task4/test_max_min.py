@@ -30,10 +30,9 @@ def max_input():
 def min_input():
     with open('input.txt', 'w') as file:
         file.write(str(1) + '\n')
-        list_input = random.sample(range(10 ** 9), 1)
-        file.write(' '.join(map(str, sorted(list_input))) + '\n')
         file.write(str(1) + '\n')
-        file.write(' '.join(map(str, random.sample(random.sample(range(10 ** 9), 1) + random.sample(list_input, 1), 1))))
+        file.write(str(1) + '\n')
+        file.write(str(1) + '\n')
 
     start = time.perf_counter()
     tracemalloc.start()
