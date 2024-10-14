@@ -24,3 +24,5 @@ class InsertionSortTestCase(unittest.TestCase):
         self.output_design(1, find_max, [18, 20, -7, 12], [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7])
         self.output_design(2, find_max, [1, 2, 3, 4],[1, 2, 3, 4])
         self.output_design(3, find_max, [1, 9, 1, 2],[2, -2, -5, -60, 1, 9, 1, 2])
+        self.output_design(4, find_max, [1], [1])
+
