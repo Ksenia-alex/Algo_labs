@@ -17,9 +17,11 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/Ksenia-alex/Algo_labs
+```
 
 2. Перейдите в папку проекта
 ```bash
 cd Algo_labs/lab1/Task3
+```
 
 3. Запустите программу из src
