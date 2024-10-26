@@ -14,5 +14,11 @@
 
 ## Запуск проекта
 1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/username/repository-name.git
+```bash
+git clone https://github.com/Ksenia-alex/Algo_labs
+
+2. Перейдите в папку проекта
+```bash
+cd Algo_labs/lab1/Task1
+
+3. Запустите программу из src
