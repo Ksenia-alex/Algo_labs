@@ -1,6 +1,3 @@
-# import random
-#
-#
 import random
 
 
@@ -38,7 +35,7 @@ def randomizer_quicksort(arr, left, right):
         return
     if left < right:
         k = random.randint(left, right)
-        arr[left], arr[k] = arr[k], arr[left]
+        arr[right], arr[k] = arr[k], arr[right]
         m = partition(arr, left, right)
         randomizer_quicksort(arr, left, m - 1)
         randomizer_quicksort(arr, m + 1, right)
