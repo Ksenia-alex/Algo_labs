@@ -9,6 +9,14 @@ def generation():
         file.write(' '.join(map(str, random.sample(range(10 ** 9), n))))
 
 
+def generations_str():
+    with open('input.txt', 'w') as file:
+        n = random.randint(1, 10 ** 5 + 1)
+        file.write(str(n) + '\n')
+        for i in range(n):
+            file.write(str(random.randint(-10 ** 9, 10 ** 9)) + ' ' + str(random.randint(-10 ** 9, 10 ** 9)) + '\n')
+
+
 def read():
     """Функция чтения данных из файла"""
     file_input = open('input.txt')
@@ -20,3 +28,8 @@ def write(res):
     """Функция записи данных в файл"""
     with open('output.txt', 'w') as file:
         file.write(' '.join(map(str, res)))
+
+def write_str(res):
+    """Функция записи строки в файл"""
+    with open('output.txt', 'w') as file:
+        file.write(str(res))
