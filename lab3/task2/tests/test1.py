@@ -16,7 +16,7 @@ generation()
 start = time.perf_counter()
 tracemalloc.start()
 
-n, data = read()
+n, data = read(2)
 res = generation_test_for_max_swap(int(n))
 write(res)
 

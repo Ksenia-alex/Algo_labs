@@ -6,7 +6,7 @@ import time
 generation()
 start = time.perf_counter()
 tracemalloc.start()
-n, data = read()
+n, data = read(1)
 
 randomizer_quicksort(data, 0, len(data) - 1)
 write(data)
