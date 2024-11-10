@@ -1,16 +1,17 @@
 import time
 import tracemalloc
 from lab3.task9.src.task9 import min_distan
-from lab3.utils import write_str, generations_str
+from lab3.utils import write_str, generations_str, read_coor
 
 start = time.perf_counter()
 tracemalloc.start()
 
-generations_str()
+generations_str(9)
 
-file = open('input.txt')
-n = int(file.readline())
-coor = [(int(i.split()[0]), int(i.split()[1])) for i in file.readlines()]
+n, coor = read_coor()
+# file = open('input.txt')
+# n = int(file.readline())
+# coor = [(int(i.split()[0]), int(i.split()[1])) for i in file.readlines()]
 
 res = min_distan(coor)
 write_str(res)
