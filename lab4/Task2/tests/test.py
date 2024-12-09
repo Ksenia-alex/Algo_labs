@@ -2,7 +2,7 @@ import unittest
 from lab4.Task2.src.task2 import algo_queue
 
 
-class TestStackProcessor(unittest.TestCase):
+class QueueTestCase(unittest.TestCase):
 
     def test_an_example_from_the_text(self):
         commands = ["+ 1", "+ 10", "-", "-"]
