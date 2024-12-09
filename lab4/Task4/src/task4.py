@@ -7,6 +7,11 @@ tracemalloc.start()
 
 
 def checking_bracket_sequence(string: str) -> str:
+    """
+    обрабатывает входящую строку на наличие правильных скобочных последовательностей
+    :param string: str
+    :return: str
+    """
     bracket = {")": "(", "}": "{", "]": "["}
     stack = []
     for i, char in enumerate(string, 1):
