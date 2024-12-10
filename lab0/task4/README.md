@@ -20,7 +20,7 @@ git clone https://github.com/Ksenia-alex/Algo_labs
 
 2. Перейдите в папку проекта
 ```bash
-cd Algo_labs/lab0/task4
+cd Algo_labs/lab0/txtf
 ```
 
 3. Запустите программу из src
