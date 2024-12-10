@@ -8,7 +8,7 @@ tracemalloc.start()
 
 def postfix_entry(chars: list[str]) -> int:
     """
-
+    вычисляет значение выражения
     :param chars: list[str]
     :return: list[str]
     """
