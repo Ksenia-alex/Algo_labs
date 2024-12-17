@@ -1,6 +1,6 @@
 import tracemalloc
 import time
-from lab6.utils import *
+from lab7.utils import *
 
 t_start = time.perf_counter()
 tracemalloc.start()
