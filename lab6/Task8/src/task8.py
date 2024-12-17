@@ -6,7 +6,12 @@ t_start = time.perf_counter()
 tracemalloc.start()
 
 
-def solve(*args):
+def solve(*args: tuple) -> tuple:
+    """
+    функция для работы с хеш-таблицей
+    :param args: tuple
+    :return: tuple
+    """
     n, x, a, b, ac, bc, ad, bd = args
     table = set()
     for _ in range(n):

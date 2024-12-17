@@ -6,7 +6,14 @@ t_start = time.perf_counter()
 tracemalloc.start()
 
 
-def count_beautiful_pairs(n, S, beautiful_pairs):
+def count_beautiful_pairs(n: int, S: str, beautiful_pairs: list[tuple]) -> int:
+    """
+    функция для подсчета красивых пар
+    :param n: int
+    :param S: str
+    :param beautiful_pairs: list[tuple]
+    :return: int
+    """
     beautiful_set = set(beautiful_pairs)
     freq = [0] * 26
     total_pairs = 0

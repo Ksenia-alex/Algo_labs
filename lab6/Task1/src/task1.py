@@ -6,7 +6,12 @@ t_start = time.perf_counter()
 tracemalloc.start()
 
 
-def Set(operations):
+def Set(operations: list[str]) -> list[str]:
+    """
+    реализация работы множества
+    :param operations: list[str]
+    :return: list[str]
+    """
     data = set()
     res = []
     for operation in operations:
