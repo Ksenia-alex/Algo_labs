@@ -6,22 +6,24 @@ t_start = time.perf_counter()
 tracemalloc.start()
 
 
-def max_increasing_subsequence(number1: list[int], number2: list[int]) -> int:
+def max_increasing_subsequence(number1: list[int], number2: list[int], number3: list[int]) -> int:
     """
-    находит максимальную длину общей подпоследовательности двух последовательностей
+    находит максимальную длину общей подпоследовательности трех последовательностей
     :param number1: list[int]
     :param number2: list[int]
+    :param number3: list[int]
     :return: int
     """
-    counts = [[0] * (len(number2) + 1) for _ in range(len(number1) + 1)]
+    counts = [[[0] * (len(number3) + 1) for _ in range(len(number2) + 1)] for _ in range(len(number1) + 1)]
 
     for i in range(1, len(number1) + 1):
         for j in range(1, len(number2) + 1):
-            if number1[i - 1] == number2[j - 1]:
-                counts[i][j] = counts[i - 1][j - 1] + 1
-            else:
-                counts[i][j] = max(counts[i][j - 1], counts[i - 1][j])
-    return counts[len(number1)][len(number2)]
+            for k in range(1, len(number3) + 1):
+                if number1[i - 1] == number2[j - 1] == number3[k - 1]:
+                    counts[i][j][k] = counts[i - 1][j - 1][k - 1] + 1
+                else:
+                    counts[i][j][k] = max(counts[i][j][k - 1], counts[i][j - 1][k], counts[i - 1][j][k])
+    return counts[len(number1)][len(number2)][len(number3)]
 
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,8 +37,10 @@ if __name__ == "__main__":
     numders1 = list(map(int, lines[1].split()))
     m = int(lines[2].strip())
     numders2 = list(map(int, lines[3].split()))
-    if 1 <= n <= 100 and 1 <= m <= 100:
-        result = max_increasing_subsequence(numders1, numders2)
+    k = int(lines[4].strip())
+    numders3 = list(map(int, lines[5].split()))
+    if 1 <= n <= 100 and 1 <= m <= 100 and 1 <= k <= 100:
+        result = max_increasing_subsequence(numders1, numders2, numders3)
         write_file(str(result), OUTPUT_PATH)
     else:
         print("Введите корректные данные")

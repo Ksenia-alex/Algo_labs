@@ -6,7 +6,12 @@ t_start = time.perf_counter()
 tracemalloc.start()
 
 
-def max_increasing_subsequence(numbers):
+def max_increasing_subsequence(numbers: list[int]) -> tuple:
+    """
+    функция для нахождения максимальной озрастающей подпоследовательности
+    :param numbers: list[int]
+    :return: tuple
+    """
     n = len(numbers)
     if n == 0:
         return 0
