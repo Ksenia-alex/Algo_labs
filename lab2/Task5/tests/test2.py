@@ -1,7 +1,7 @@
 import unittest
 import time
 import tracemalloc
-from lab2.Task5.task5 import majority
+from lab2.Task5.src.task5 import majority
 
 
 class InsertionSortTestCase(unittest.TestCase):

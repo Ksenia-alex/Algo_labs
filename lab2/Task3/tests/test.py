@@ -1,7 +1,7 @@
 import unittest
 import time
 import tracemalloc
-from lab2.Task3.task3 import search_inversions
+from lab2.Task3.src.task3 import search_inversions
 
 
 class SearchInversionsTestCase(unittest.TestCase):

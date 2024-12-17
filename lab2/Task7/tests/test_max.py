@@ -6,11 +6,11 @@ from lab2.Task7.task7 import find_max
 start = time.perf_counter()
 tracemalloc.start()
 
-with open('input.txt', 'w') as f:
+with open('../txtf/input.txt', 'w') as f:
     f.write(' '.join(map(str, random.sample(range(-10 ** 9, 10 ** 9), 2 * 10 ** 4))))
 
-with open('output.txt', 'w') as file:
-    f_input = list(map(int, open('input.txt').readline().split()))
+with open('../txtf/output.txt', 'w') as file:
+    f_input = list(map(int, open('../txtf/input.txt').readline().split()))
     a = find_max(f_input)
     file.write(' '.join(map(str, a)))
 

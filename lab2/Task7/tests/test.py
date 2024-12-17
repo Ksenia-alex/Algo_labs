@@ -1,8 +1,7 @@
 import unittest
 import time
 import tracemalloc
-from lab2.Task7.task7 import find_max
-
+from lab2.Task7.src.task7 import find_max
 
 class InsertionSortTestCase(unittest.TestCase):
     def output_design(self, test_num, func, eq_value, params):

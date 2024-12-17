@@ -1,7 +1,7 @@
 import unittest
 import time
 import tracemalloc
-from lab2.Task8.task8 import mul_polynomials
+from lab2.Task8.src.task8 import mul_polynomials
 
 
 class PolynomialsMulTestCase(unittest.TestCase):

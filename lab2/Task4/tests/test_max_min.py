@@ -5,7 +5,7 @@ import random
 
 
 def max_input():
-    with open('input.txt', 'w') as file:
+    with open('../txtf/input.txt', 'w') as file:
         file.write(str(10 ** 5) + '\n')
         list_input = random.sample(range(10 ** 9), 10 ** 5)
         file.write(' '.join(map(str, sorted(list_input))) + '\n')
@@ -15,8 +15,8 @@ def max_input():
     start = time.perf_counter()
     tracemalloc.start()
 
-    with open('output.txt', 'w') as f:
-        file = open('input.txt')
+    with open('../txtf/output.txt', 'w') as f:
+        file = open('../txtf/input.txt')
         n, mass = int(file.readline()), list(map(int, file.readline().split()))
         k, mass_find = int(file.readline()), list(map(int, file.readline().split()))
         f.write(' '.join(map(str, play(mass, mass_find))))
@@ -28,7 +28,7 @@ def max_input():
 
 
 def min_input():
-    with open('input.txt', 'w') as file:
+    with open('../txtf/input.txt', 'w') as file:
         file.write(str(1) + '\n')
         file.write(str(1) + '\n')
         file.write(str(1) + '\n')
@@ -37,8 +37,8 @@ def min_input():
     start = time.perf_counter()
     tracemalloc.start()
 
-    with open('output.txt', 'w') as f:
-        file = open('input.txt')
+    with open('../txtf/output.txt', 'w') as f:
+        file = open('../txtf/input.txt')
         n, mass = int(file.readline()), list(map(int, file.readline().split()))
         k, mass_find = int(file.readline()), list(map(int, file.readline().split()))
         f.write(' '.join(map(str, play(mass, mass_find))))

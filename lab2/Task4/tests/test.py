@@ -1,7 +1,7 @@
 import unittest
 import time
 import tracemalloc
-from lab2.Task4.task4 import play
+from lab2.Task4.src.task4 import play
 
 
 class BinarySearchTestCase(unittest.TestCase):

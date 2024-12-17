@@ -1,17 +1,17 @@
 import random
 import time
 import tracemalloc
-from lab2.Task5.task5 import majority
+from lab2.Task5.src.task5 import majority
 
-with open('input.txt', 'w') as file:
+with open('../txtf/input.txt', 'w') as file:
     file.write(str(10 ** 5) + '\n')
     file.write(' '.join(map(str, random.sample(range(10 ** 9), 10 ** 5))))
 
 start = time.perf_counter()
 tracemalloc.start()
 
-with open('output.txt', 'w') as f:
-    file = open('input.txt')
+with open('../txtf/output.txt', 'w') as f:
+    file = open('../txtf/input.txt')
     n = int(file.readline())
     list_input = list(map(int, file.readline().split()))
     f.write(str(majority(list_input)))
