@@ -39,7 +39,7 @@ if __name__ == "__main__":
     lines = open_file(INPUT_PATH)
     n = int(lines[0].strip())
     numders = list(map(int, lines[1].split()))
-    if 1 <= n <= 10 ** 3:
+    if 1 <= n <= 300000:
         result = max_increasing_subsequence(numders)
         write_file('\n'.join([str(result[0]), ' '.join(map(str, result[1]))]), OUTPUT_PATH)
     else:
