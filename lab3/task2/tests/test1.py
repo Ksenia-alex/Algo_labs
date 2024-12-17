@@ -1,28 +1,19 @@
-import random
-from lab3.utils import read, write
+import unittest
 from lab3.task2.src.task2 import generation_test_for_max_swap
-import time
-import tracemalloc
 
 
-def generation():
-    """Функция генерации рандомного массива из допустимого диапазона"""
-    with open('input.txt', 'w') as file:
-        n = random.randint(1, 10 ** 6)
-        file.write(str(n))
+class TestCase(unittest.TestCase):
+    def test_with_data_task(self):
+        self.assertEqual(generation_test_for_max_swap(3), [3, 2, 1])
 
-
-generation()
-start = time.perf_counter()
-tracemalloc.start()
-
-n, data = read(2)
-res = generation_test_for_max_swap(int(n))
-write(res)
-
-print(time.perf_counter() - start, 'c')
-print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'MB')
-tracemalloc.stop()
+    def test_with_other_data(self):
+        self.assertEqual(generation_test_for_max_swap(1), [1])
+        self.assertEqual(generation_test_for_max_swap(6), [6, 5, 4, 3, 2, 1])
+        self.assertEqual(generation_test_for_max_swap(4), [4, 3, 2, 1])
+        self.assertEqual(generation_test_for_max_swap(7), [7, 6, 5, 4, 3, 2, 1])
+        self.assertEqual(generation_test_for_max_swap(2), [2, 1])
 
 
 
+if __name__ == '__main__':
+    unittest.main()

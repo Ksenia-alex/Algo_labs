@@ -4,7 +4,7 @@ import tracemalloc
 from lab3.task5.src.task5 import find_index_h
 
 
-class MinDistTestCase(unittest.TestCase):
+class TestCase(unittest.TestCase):
     def output_design(self, test_num, func, eq_value, params):
         start = time.perf_counter()
         tracemalloc.start()

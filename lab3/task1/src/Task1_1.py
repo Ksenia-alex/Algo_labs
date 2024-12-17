@@ -1,4 +1,10 @@
 import random
+import tracemalloc
+import time
+from lab3.utils import *
+
+t_start = time.perf_counter()
+tracemalloc.start()
 
 
 def partition(arr, left, right):
@@ -41,3 +47,21 @@ def randomizer_quicksort(arr, left, right):
         randomizer_quicksort(arr, m + 1, right)
 
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+TXTF_DIR = os.path.join(os.path.dirname(CURRENT_DIR), "txtf")
+INPUT_PATH = os.path.join(TXTF_DIR, "input.txt")
+OUTPUT_PATH = os.path.join(TXTF_DIR, "output.txt")
+
+if __name__ == "__main__":
+    lines = open_file(INPUT_PATH)
+    n = lines[0]
+    data = list(map(int, lines[1].split()))
+    if 1 <= int(n) <= 10 ** 4:
+        randomizer_quicksort(data, 0, len(data) - 1)
+        write_file(' '.join(map(str, data)), OUTPUT_PATH)
+    else:
+        print("Введите корректные данные")
+
+    print("Время работы: %s секунд" % (time.perf_counter() - t_start))
+    print("Затрачено памяти:", tracemalloc.get_traced_memory()[1], "байт")
+    tracemalloc.stop()
