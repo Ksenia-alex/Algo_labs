@@ -1,9 +1,11 @@
-import time
 import tracemalloc
+import time
 import random
+from lab6.utils import *
 
-start = time.perf_counter()
+t_start = time.perf_counter()
 tracemalloc.start()
+
 
 # with open('input.txt', 'w') as f:
 #     a = random.sample(range(100000), 1000)
@@ -11,20 +13,24 @@ tracemalloc.start()
 #     f.write(' '.join(map(str, random.sample(a, 1))))
 
 
-file = open('input.txt')
-a = list(map(int, file.readline().split()))
-v = int(file.readline())
-ind = []
-for i in range(len(a)):
-    if a[i] == v:
-        ind.append(i)
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+TXTF_DIR = os.path.join(os.path.dirname(CURRENT_DIR), "txtf")
+INPUT_PATH = os.path.join(TXTF_DIR, "input.txt")
+OUTPUT_PATH = os.path.join(TXTF_DIR, "output.txt")
 
-
-with open('output.txt', 'w') as file:
-    if len(ind) == 0:
-        file.write(str(-1))
+if __name__ == "__main__":
+    lines = open_file(INPUT_PATH)
+    a = list(map(int, lines[0].split()))
+    v = int(lines[1])
+    ind = []
+    for i in range(len(a)):
+        if a[i] == v:
+            ind.append(i)
+    if 1 <= v <= 5 * 10 ** 5:
+        write_file(str(len(ind)) + ' ' + ', '.join(map(str, ind)), OUTPUT_PATH)
     else:
-        file.write(str(len(ind)) + ' ' + ', '.join(map(str, ind))) if len(ind) > 1 else file.write(str(ind[0]))
+        print("Введите корректные данные")
 
-print(time.perf_counter() - start)
-print(tracemalloc.get_traced_memory()[0] / 1024, 'MB')
+    print("Время работы: %s секунд" % (time.perf_counter() - t_start))
+    print("Затрачено памяти:", tracemalloc.get_traced_memory()[1], "байт")
+    tracemalloc.stop()

@@ -36,3 +36,11 @@ git clone https://github.com/Ksenia-alex/Algo_labs.git
 ```
 cd Algo_labs
 ```
+3. Запуск лаб
+```commandline
+for script in lab*/*/src/*.py; do PYTHONPATH=$(pwd) python3 "$script"; done
+```
+4. Запуск тестов 
+```commandline
+python3 -m unittest -v lab*/task*/tests/*.py
+```

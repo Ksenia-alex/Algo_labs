@@ -5,15 +5,15 @@ import random
 
 
 def max_input():
-    with open('../txtf/input.txt', 'w') as file:
+    with open('../../txtf/input.txt', 'w') as file:
         file.write(str(10 ** 5) + '\n')
         file.write(' '.join(map(str, random.sample(range(10 ** 9), 10 ** 5))))
 
     start = time.perf_counter()
     tracemalloc.start()
 
-    with open('../txtf/output.txt', 'w') as f:
-        file = open('../txtf/input.txt')
+    with open('../../txtf/output.txt', 'w') as f:
+        file = open('../../txtf/input.txt')
         n = int(file.readline())
         mass = list(map(int, file.readline().split()))
         mass_copy = mass.copy()
@@ -26,15 +26,15 @@ def max_input():
 
 
 def min_input():
-    with open('../txtf/input.txt', 'w') as file:
+    with open('../../txtf/input.txt', 'w') as file:
         file.write(str(1) + '\n')
         file.write(str(1))
 
     start = time.perf_counter()
     tracemalloc.start()
 
-    with open('../txtf/output.txt', 'w') as f:
-        file = open('../txtf/input.txt')
+    with open('../../txtf/output.txt', 'w') as f:
+        file = open('../../txtf/input.txt')
         n = int(file.readline())
         mass = list(map(int, file.readline().split()))
         mass_copy = mass.copy()
